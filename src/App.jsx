@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
+import { FaWhatsapp } from "react-icons/fa";
 
 import {
   ArrowDown,
@@ -809,6 +810,13 @@ export default function Home() {
           >
             <AtSign size={17} />
             Instagram
+          </a>
+
+          <a
+            href="https://wa.me/5581995594773"
+          >
+            <FaWhatsapp size={17} />
+            WhatsApp
           </a>
         </div>
 
