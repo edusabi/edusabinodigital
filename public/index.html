@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WhatsApp | Eduardo Sabino</title>
+  </head>
+  <body>
+    <p>Abrindo o WhatsApp…</p>
+    <a id="contato">Se não abrir, clique aqui.</a>
+
+    <script>
+      const mensagem =
+        "Olá, Eduardo! Vim pelo Instagram e gostaria de um orçamento.";
+
+      const url =
+        "https://wa.me/5581995594773?text=" +
+        encodeURIComponent(mensagem);
+
+      document.getElementById("contato").href = url;
+      window.location.replace(url);
+    </script>
+  </body>
+</html>

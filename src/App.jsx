@@ -102,8 +102,7 @@ const translations = {
       lead1:
         "Não construo apenas páginas. Crio pontos de contato digitais que fazem uma marca ser ",
       leadEm: "vista, entendida e lembrada.",
-      text:
-        "Sou Eduardo Sabino, desenvolvedor focado em experiências web, sistemas completos e automações que resolvem problemas reais. Cada projeto nasce do equilíbrio entre clareza visual, performance e resultado.",
+      text: "Sou Eduardo Sabino, desenvolvedor focado em experiências web, sistemas completos e automações que resolvem problemas reais. Cada projeto nasce do equilíbrio entre clareza visual, performance e resultado.",
       stats: [
         { v: "10+", l: "Projetos desenvolvidos" },
         { v: "03", l: "Áreas de atuação" },
@@ -170,8 +169,7 @@ const translations = {
       lead1:
         "I don't just build pages. I create digital touchpoints that make a brand ",
       leadEm: "seen, understood, and remembered.",
-      text:
-        "I'm Eduardo Sabino, a developer focused on web experiences, complete systems, and automations that solve real problems. Every project stems from the balance between visual clarity, performance, and results.",
+      text: "I'm Eduardo Sabino, a developer focused on web experiences, complete systems, and automations that solve real problems. Every project stems from the balance between visual clarity, performance, and results.",
       stats: [
         { v: "10+", l: "Developed projects" },
         { v: "03", l: "Areas of expertise" },
@@ -225,9 +223,7 @@ export default function Home() {
   const t = translations[lang];
 
   const toggleLanguage = () => {
-    setLang((previousLanguage) =>
-      previousLanguage === "pt" ? "en" : "pt",
-    );
+    setLang((previousLanguage) => (previousLanguage === "pt" ? "en" : "pt"));
   };
 
   useEffect(() => {
@@ -267,9 +263,7 @@ export default function Home() {
     });
 
     if (document.fonts?.ready) {
-      document.fonts.ready
-        .then(refreshAOS)
-        .catch(() => {});
+      document.fonts.ready.then(refreshAOS).catch(() => {});
     }
 
     const updateProgress = () => {
@@ -278,8 +272,7 @@ export default function Home() {
       const totalHeight =
         document.documentElement.scrollHeight - window.innerHeight;
 
-      const progress =
-        totalHeight > 0 ? window.scrollY / totalHeight : 0;
+      const progress = totalHeight > 0 ? window.scrollY / totalHeight : 0;
 
       progressRef.current.style.transform = `scaleX(${progress})`;
     };
@@ -290,15 +283,9 @@ export default function Home() {
       window.cancelAnimationFrame(pointerFrame);
 
       pointerFrame = window.requestAnimationFrame(() => {
-        pageRef.current?.style.setProperty(
-          "--pointer-x",
-          `${event.clientX}px`,
-        );
+        pageRef.current?.style.setProperty("--pointer-x", `${event.clientX}px`);
 
-        pageRef.current?.style.setProperty(
-          "--pointer-y",
-          `${event.clientY}px`,
-        );
+        pageRef.current?.style.setProperty("--pointer-y", `${event.clientY}px`);
       });
     };
 
@@ -340,25 +327,13 @@ export default function Home() {
 
   return (
     <div className="site-shell" ref={pageRef}>
-      <div
-        className="scroll-progress"
-        ref={progressRef}
-        aria-hidden="true"
-      />
+      <div className="scroll-progress" ref={progressRef} aria-hidden="true" />
 
       <div className="pointer-light" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
 
-      <header
-        className="header"
-        data-aos="fade-down"
-        data-aos-duration="650"
-      >
-        <a
-          className="brand"
-          href="#inicio"
-          aria-label="Ir para o início"
-        >
+      <header className="header" data-aos="fade-down" data-aos-duration="650">
+        <a className="brand" href="#inicio" aria-label="Ir para o início">
           <img
             src="/logoInstagram.png"
             alt="Logo de Eduardo Sabino"
@@ -368,10 +343,7 @@ export default function Home() {
           />
         </a>
 
-        <nav
-          className="nav"
-          aria-label="Navegação principal"
-        >
+        <nav className="nav" aria-label="Navegação principal">
           <a href="#sobre">{t.nav.about}</a>
           <a href="#projetos">{t.nav.projects}</a>
           <a href="#processo">{t.nav.process}</a>
@@ -386,30 +358,19 @@ export default function Home() {
           >
             <Globe size={15} />
 
-            <span>
-              {lang === "pt" ? "EN" : "PT"}
-            </span>
+            <span>{lang === "pt" ? "EN" : "PT"}</span>
           </button>
 
-          <a
-            className="header-cta"
-            href="#contato"
-          >
+          <a className="header-cta" href="#contato">
             {t.nav.talk}
 
-            <ArrowUpRight
-              size={15}
-              strokeWidth={1.8}
-            />
+            <ArrowUpRight size={15} strokeWidth={1.8} />
           </a>
         </div>
       </header>
 
       <main>
-        <section
-          className="hero"
-          id="inicio"
-        >
+        <section className="hero" id="inicio">
           <div
             className="hero-grid"
             aria-hidden="true"
@@ -417,10 +378,7 @@ export default function Home() {
             data-aos-duration="1100"
           />
 
-          <div
-            className="hero-orbit"
-            aria-hidden="true"
-          >
+          <div className="hero-orbit" aria-hidden="true">
             <span />
           </div>
 
@@ -435,19 +393,12 @@ export default function Home() {
           </div>
 
           <div className="hero-copy">
-            <p
-              className="eyebrow"
-              data-aos="fade-up"
-              data-aos-delay="110"
-            >
+            <p className="eyebrow" data-aos="fade-up" data-aos-delay="110">
               {t.hero.eyebrow}
             </p>
 
             <h1 aria-label="Eu crio experiências digitais">
-              <span
-                data-aos="fade-up"
-                data-aos-delay="40"
-              >
+              <span data-aos="fade-up" data-aos-delay="40">
                 {t.hero.title1}
               </span>
 
@@ -459,10 +410,7 @@ export default function Home() {
                 {t.hero.title2}
               </span>
 
-              <span
-                data-aos="fade-up"
-                data-aos-delay="180"
-              >
+              <span data-aos="fade-up" data-aos-delay="180">
                 {t.hero.title3}
 
                 <span className="accent-dot">.</span>
@@ -470,23 +418,14 @@ export default function Home() {
             </h1>
           </div>
 
-          <div
-            className="hero-bottom"
-            data-aos="fade-up"
-            data-aos-delay="260"
-          >
+          <div className="hero-bottom" data-aos="fade-up" data-aos-delay="260">
             <p>
               {t.hero.desc1}
 
-              <strong>
-                {t.hero.descBold}
-              </strong>
+              <strong>{t.hero.descBold}</strong>
             </p>
 
-            <a
-              className="scroll-link"
-              href="#projetos"
-            >
+            <a className="scroll-link" href="#projetos">
               {t.hero.viewProjects}
 
               <ArrowDown size={17} />
@@ -504,15 +443,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="about section"
-          id="sobre"
-        >
+        <section className="about section" id="sobre">
           <div className="about-sidebar">
-            <div
-              className="section-label"
-              data-aos="fade-right"
-            >
+            <div className="section-label" data-aos="fade-right">
               <span>01</span>
 
               {t.about.label}
@@ -534,37 +467,20 @@ export default function Home() {
           </div>
 
           <div className="about-content">
-            <p
-              className="about-lead"
-              data-aos="fade-up"
-            >
+            <p className="about-lead" data-aos="fade-up">
               {t.about.lead1}
 
-              <em>
-                {t.about.leadEm}
-              </em>
+              <em>{t.about.leadEm}</em>
             </p>
 
             <div className="about-grid">
-              <div
-                className="about-note"
-                data-aos="fade-up"
-              >
-                <Terminal
-                  size={20}
-                  strokeWidth={1.5}
-                />
+              <div className="about-note" data-aos="fade-up">
+                <Terminal size={20} strokeWidth={1.5} />
 
-                <p>
-                  {t.about.text}
-                </p>
+                <p>{t.about.text}</p>
               </div>
 
-              <div
-                className="stats"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
+              <div className="stats" data-aos="fade-up" data-aos-delay="100">
                 {t.about.stats.map((stat) => (
                   <div key={stat.l}>
                     <strong>{stat.v}</strong>
@@ -576,23 +492,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="projects section"
-          id="projetos"
-        >
+        <section className="projects section" id="projetos">
           <div className="projects-heading">
-            <div
-              className="section-label"
-              data-aos="fade-right"
-            >
+            <div className="section-label" data-aos="fade-right">
               <span>02</span>
 
               {t.projectsSec.label}
             </div>
 
-            <p data-aos="fade-left">
-              {t.projectsSec.desc}
-            </p>
+            <p data-aos="fade-left">{t.projectsSec.desc}</p>
           </div>
 
           <div className="project-list">
@@ -635,19 +543,13 @@ export default function Home() {
                   <div>
                     <h2>{project.title}</h2>
 
-                    <p>
-                      {project.description[lang]}
-                    </p>
+                    <p>{project.description[lang]}</p>
                   </div>
 
                   <div className="project-footer">
-                    <ul
-                      aria-label={`Tecnologias do projeto ${project.title}`}
-                    >
+                    <ul aria-label={`Tecnologias do projeto ${project.title}`}>
                       {project.stack.map((item) => (
-                        <li key={item}>
-                          {item}
-                        </li>
+                        <li key={item}>{item}</li>
                       ))}
                     </ul>
 
@@ -674,39 +576,26 @@ export default function Home() {
           data-aos="fade-up"
         >
           <div className="marquee-track">
-            {[...capabilities, ...capabilities].map(
-              (item, index) => (
-                <span key={`${item}-${index}`}>
-                  {item}
+            {[...capabilities, ...capabilities].map((item, index) => (
+              <span key={`${item}-${index}`}>
+                {item}
 
-                  <i>✦</i>
-                </span>
-              ),
-            )}
+                <i>✦</i>
+              </span>
+            ))}
           </div>
         </section>
 
-        <section
-          className="process section"
-          id="processo"
-        >
-          <div
-            className="section-label"
-            data-aos="fade-right"
-          >
+        <section className="process section" id="processo">
+          <div className="section-label" data-aos="fade-right">
             <span>03</span>
 
             {t.process.label}
           </div>
 
           <div className="process-content">
-            <div
-              className="process-title"
-              data-aos="fade-up"
-            >
-              <p>
-                {t.process.eyebrow}
-              </p>
+            <div className="process-title" data-aos="fade-up">
+              <p>{t.process.eyebrow}</p>
 
               <h2>
                 {t.process.title1}
@@ -720,11 +609,7 @@ export default function Home() {
             <ol className="process-list">
               {t.process.steps.map((step, index) => {
                 const Icon =
-                  index === 0
-                    ? Braces
-                    : index === 1
-                      ? Zap
-                      : ChevronRight;
+                  index === 0 ? Braces : index === 1 ? Zap : ChevronRight;
 
                 return (
                   <li
@@ -732,9 +617,7 @@ export default function Home() {
                     data-aos-delay={index * 90}
                     key={step.title}
                   >
-                    <span>
-                      0{index + 1}
-                    </span>
+                    <span>0{index + 1}</span>
 
                     <div>
                       <h3>{step.title}</h3>
@@ -749,56 +632,34 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="contact"
-          id="contato"
-        >
-          <div
-            className="contact-glow"
-            aria-hidden="true"
-          />
+        <section className="contact" id="contato">
+          <div className="contact-glow" aria-hidden="true" />
 
-          <p data-aos="fade-up">
-            {t.contact.eyebrow}
-          </p>
+          <p data-aos="fade-up">{t.contact.eyebrow}</p>
 
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="60"
-          >
+          <h2 data-aos="fade-up" data-aos-delay="60">
             {t.contact.title1}
 
-            <span>
-              {t.contact.title2}
-            </span>
+            <span>{t.contact.title2}</span>
           </h2>
 
           <a
             className="contact-link"
-            href="https://www.instagram.com/edusabino.digital/"
+            href="/whatsapp/"
             target="_blank"
             rel="noreferrer"
             data-aos="fade-up"
             data-aos-delay="120"
           >
             {t.contact.btn}
-
             <MoveRight size={25} />
           </a>
         </section>
       </main>
 
-      <footer
-        className="footer"
-        data-aos="fade-up"
-        data-aos-offset="20"
-      >
+      <footer className="footer" data-aos="fade-up" data-aos-offset="20">
         <div>
-          <a
-            href="https://github.com/edusabi"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/edusabi" target="_blank" rel="noreferrer">
             <Code2 size={17} />
             GitHub
           </a>
@@ -812,9 +673,7 @@ export default function Home() {
             Instagram
           </a>
 
-          <a
-            href="https://wa.me/5581995594773"
-          >
+          <a href="/whatsapp/">
             <FaWhatsapp size={17} />
             WhatsApp
           </a>
@@ -825,10 +684,7 @@ export default function Home() {
         <a href="#inicio">
           {t.footer.backTop}
 
-          <ArrowDown
-            className="footer-arrow"
-            size={16}
-          />
+          <ArrowDown className="footer-arrow" size={16} />
         </a>
       </footer>
     </div>
